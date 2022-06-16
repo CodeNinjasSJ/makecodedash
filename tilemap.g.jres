@@ -1,0 +1,18 @@
+{
+    "tile1": {
+        "data": "hwQQABAAAAAAAAAAAAAA/wAAAAAAAP//AAAAAAD///8AAAAA/////wAAAP//////AAD///////8A//////////D/////////8P////////8A/////////wAA////////AAAA//////8AAAAA/////wAAAAAA////AAAAAAAA//8AAAAAAAAA/w==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true,
+        "displayName": "Spike"
+    },
+    "transparency16": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myTiles"
+    }
+}
