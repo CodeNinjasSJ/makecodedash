@@ -4,8 +4,8 @@ enum ActionKind {
     Jumping
 }
 enum RadioMessage {
-    message1 = 49434,
-    NewObstacle = 39389
+    NewObstacle = 39389,
+    message1 = 49434
 }
 namespace SpriteKind {
     export const Floor = SpriteKind.create()
@@ -19,13 +19,14 @@ sprites.onOverlap(SpriteKind.FrontCollider, SpriteKind.Block, function (sprite, 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Spike, function (sprite, otherSprite) {
     game.reset()
 })
-let Spike: Sprite = null
+let Spike2: Sprite = null
 let Speed = 0
 let UpAmount = 0
 let Gravity = 0
 let Cube = sprites.create(assets.image`PlayerCube`, SpriteKind.Player)
-let FrontCollider = sprites.create(assets.image`myImage`, SpriteKind.FrontCollider)
-let Floor = sprites.create(assets.image`myImage1`, SpriteKind.Floor)
+scaling.scaleByPixels(Cube, 0, ScaleDirection.Horizontally, ScaleAnchor.Middle)
+let FrontCollider2 = sprites.create(assets.image`myImage`, SpriteKind.FrontCollider)
+let Floor2 = sprites.create(assets.image`myImage1`, SpriteKind.Floor)
 Cube.x = 30
 scene.setBackgroundColor(6)
 let Ground = animation.createAnimation(ActionKind.Idle, 250)
@@ -34,10 +35,10 @@ BlockObstacle.setPosition(180, 82)
 forever(function () {
     Gravity += 0.25
     Cube.y += Gravity
-    if (Cube.overlapsWith(Floor) || Cube.overlapsWith(BlockObstacle)) {
+    if (Cube.overlapsWith(Floor2) || Cube.overlapsWith(BlockObstacle)) {
         Gravity = 0
         UpAmount = 0
-        while (Cube.overlapsWith(BlockObstacle) || Cube.overlapsWith(Floor)) {
+        while (Cube.overlapsWith(BlockObstacle) || Cube.overlapsWith(Floor2)) {
             UpAmount += 1
             Cube.y += -1
         }
@@ -45,7 +46,7 @@ forever(function () {
             Gravity = -4
         }
     }
-    FrontCollider.setPosition(Cube.x, Cube.y)
+    FrontCollider2.setPosition(Cube.x, Cube.y)
 })
 forever(function () {
     Speed = 0.75
@@ -60,12 +61,12 @@ forever(function () {
     }
     for (let index = 0; index < 2; index++) {
         pause(1000)
-        Spike = sprites.create(assets.image`DoubleSpike`, SpriteKind.Spike)
-        Spike.setPosition(180, 82)
-        while (-20 < Spike.x) {
-            Spike.x += 0 - Speed
+        Spike2 = sprites.create(assets.image`DoubleSpike`, SpriteKind.Spike)
+        Spike2.setPosition(180, 82)
+        while (-20 < Spike2.x) {
+            Spike2.x += 0 - Speed
             pause(3)
         }
-        Spike.destroy()
+        Spike2.destroy()
     }
 })
